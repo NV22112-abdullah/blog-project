@@ -1,6 +1,6 @@
 import React from "react";
 import { images } from "../constants";
-
+import { AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
 const navItemsInfo = [
   {name: "Home"},
   {name: "Articles"},
@@ -36,6 +36,16 @@ const navVisibilityHandler = () => [
       <div>
        <img className="w-16" src={images.Logo} alt="logo" /> 
       </div>
+      <div>
+        {navIsVisible ? (
+        <AiOutlineClose 
+          className="w-6 h-6"
+          onClick={navVisibilityHandler}
+        />
+        ) : (
+        <AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandler}/>
+        )}
+        </div>
       <div className={`${navIsVisible ? "right-0" : "-right-full"
     } flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-0 bottem-0 lg:static gap-x-9 items-center`}>
        <ul className="flex gap-x-2 font-semibold">
