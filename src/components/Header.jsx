@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { images } from "../constants";
 import { AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
 const navItemsInfo = [
@@ -23,15 +23,16 @@ return(
 }
 
 const Header = () => {
-const [navIsVisible, setNavIsVisible] = useState(false);
+  const [navIsVisible, setNavIsVisable] = useState(false);
 
-const navVisibilityHandler = () => [
-  setNavIsVisible((curState) => {
-    return!curState;
-  })
-]
+  const navVisibilityHandler = () => {
+    setNavIsVisable((curState) => {
+      return !curState
+    });
+  };
 
-  return <section>
+  return (
+  <section>
      <header className="container mx-auto px-5 flex justify-between py-4 items-center">
       <div>
        <img className="w-16" src={images.Logo} alt="logo" /> 
@@ -57,6 +58,7 @@ const navVisibilityHandler = () => [
       </div>
     </header>
   </section>
+  )
 };
 
 export default Header;
